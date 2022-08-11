@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section class="main">
+    <div class="images">
+      <div class="front">
+        <div class="logo"></div>
+        <div class="number">0000 0000 0000 0000</div>
+        <div class="name-date">
+          <div class="name">JANE APPLESEED</div>
+          <div class="date">00/00</div>
+        </div>
+      </div>
+      <div class="back">
+        <div class="pin">000</div>
+      </div>
+    </div>
+    <div class="form-section">
+      <form class="form">
+        <label for="Name">CARDHOLDE NAME</label>
+        <input type="text" id="Name" name="NameI" placeholder="e.g. Jane Appleseed" title="Name cannot be empty" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required/>
+        <label for="Number">CARD NUMBER</label>
+        <input type="text" id="Number" name="NumberI" placeholder="e.g. 1234 5678 9123 0000" title="Wrong format, numbers only" required/>
+        <label for="Month">EXP. DATE (MM/YY)</label>
+        <label style="margin-right:6rem" for="Cvc">CVC</label>
+        <input type="text" id="Month" name="MonthI" placeholder="MM" required/>
+        <input type="text" id="Year" name="YearI" placeholder="YY" required/>
+        <input type="text" id="Cvc" name="CvcI" placeholder="e.g. 123" title="Can't be blank" required/>
+        <input type="submit" value="Confirm">
+      </form>
+      <div class="complete none">
+        <img src="images/icon-complete.svg" alt="Complete">
+        <h2>THANK YOU!</h2>
+        <p>We've added your card details</p>
+        <button>Continue</button>
+      </div>
+    </div>
+  </section>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Juan Jose Acevedo Serna</a>.
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

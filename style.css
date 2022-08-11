@@ -1,0 +1,536 @@
+/* Custom properties */
+:root {
+
+    --linear-gradient-color: hsl(249, 99%, 64%);
+    --linear-gradient-second-color: hsl(278, 94%, 30%);
+
+    --red-color : hsl(0, 100%, 66%); /*(input errors)*/
+    --green-color: hsl(154, 59%, 51%);
+    --white-color: hsl(0, 0%, 100%);
+    --light-grayish-violet-color: hsl(270, 3%, 87%);
+    --dark-grayish-violet-color: hsl(279, 6%, 55%);
+    --very-dark-violet-color: hsl(278, 68%, 11%);
+
+
+    --font: 18px;
+    --font-space: 'Space Grotesk', sans-serif;
+    
+  }
+
+
+/* Reset */
+
+html{
+    box-sizing: border-box;
+    font-size: var(--font);
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+
+}
+
+body{
+    margin: 0;
+    font-family:var(--font-space) ;
+}
+
+
+/*Styles*/
+
+.main{
+    width: 100%;
+    height: 100vh;
+    background-image: url("images/bg-main-mobile.png");
+    background-size: 100% 35vh;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+.images{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1rem 15% 1fr 1rem;
+    grid-template-rows: 20% 58% 1fr;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 9rem;
+}
+
+.back{
+    grid-column: 3 / 4 ;
+    grid-row: 2 / 4;
+    width: 290px;
+    height: 159px;
+    background-image: url("images/bg-card-back.png");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.pin{
+    color: var(--white-color);
+    font-size: 12px;
+    margin: 0;
+    margin-right: 3rem;
+    margin-bottom: 2px;
+    letter-spacing: 2px;
+}
+.front{
+    grid-column: 2 / 4 ;
+    grid-row: 3 / 4;
+    z-index: 999;
+    width: 290px;
+    height: 159px;
+    margin: 0;
+    padding: 10px;
+    background-image: url("images/bg-card-front.png");
+    background-size: contain;
+    color: var(--white-color);
+}
+
+.logo{
+    width: 43px;
+    height: 24px;
+    margin: 0;
+    margin-bottom: 40px;
+    background-image: url("images/card-logo.svg");
+    background-size: cover;
+}
+.number{
+    font-size: 15px;
+    margin: 0;
+    margin-bottom: 22px;
+    letter-spacing: 5px;
+}
+
+.name-date{
+    font-size: 10px;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.form-section{
+    flex-grow: 1;
+    height: 100%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+    
+}
+
+
+.form{
+    align-self: center;
+    width: 90%;
+    height: 360px;
+    margin: 0;
+    margin-right: 0;
+}
+
+.form label{
+    display: inline-block;
+    color: var(--very-dark-violet-color);
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin: 0;
+    margin-right: 42px;
+    margin-top: 1rem;
+    margin-bottom: 7px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.margin{
+    margin-left: 9rem;
+}
+
+.form input{
+    height: 46px;
+    font-family: var(--font-space);
+    /* color: var(--light-grayish-violet-color); */
+    font-size: 1rem;
+    border-radius: 10px;
+    border: thin solid var(--light-grayish-violet-color);
+    margin: 0;
+    padding: 0;
+    padding: 0 12px;
+}
+
+::placeholder{
+    color: var(--light-grayish-violet-color);
+    margin-left: 1rem;
+}
+#Name,
+#Number,
+.form input[type="submit"]{
+    width: 100%;
+}
+
+#Month, 
+#Year{
+    width: 80px;
+}
+
+#Month{
+    margin: 0;
+    margin-right: 6px;
+}
+
+#Cvc{
+    width: 150px;
+    margin-left: 10px;
+}
+
+.form input[type="submit"]{
+    background-color: var(--very-dark-violet-color);
+    color: var(--white-color);
+    margin: 0;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.form input[type="submit"]:hover{
+    background-color: var(--linear-gradient-second-color) ;
+}
+
+.form [required]:valid{
+    border: thin solid var(--green-color);
+}
+
+.form [required]:invalid{
+    border: thin solid var(--red-color);
+}
+
+.err{
+    height: 400px !important;
+}
+.form-error{
+    font-size: 12px;
+    text-align: left;
+    color: var(--red-color);
+    transition: all 800ms ease;
+}
+.form-error.is-active{
+    display:block;
+    animation: show-message 1s 1 normal 0s ease-out both;
+}
+@keyframes show-message{
+    0%{
+        visibility: hidden;
+        opacity: 0;
+    }
+    100%{
+        visibility: visible;
+        opacity: 1; 
+    }
+}
+span{
+    display: inline-block;
+}
+
+
+.complete{
+    width: 380px;
+    height: 360px;
+    margin: 0;
+    margin-right: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.complete h2{
+    letter-spacing: 4px;
+    margin: 0;
+    margin: 2rem 0 1rem 0;
+}
+
+.complete p{
+    margin: 0;
+    color: var(--dark-grayish-violet-color);
+}
+
+
+.complete button{
+    width: 80%;
+    height: 50px;
+    background-color: var(--very-dark-violet-color);
+    color: var(--white-color);
+    margin: 0;
+    margin-top: 50px;
+    cursor: pointer;
+    font-family: var(--font-space);
+    font-size: 1rem;
+    border-radius: 10px;
+}
+
+.complete button:hover{
+    background-color: var(--linear-gradient-second-color) ;
+}
+
+.none{
+    display: none;
+}
+
+.attribution { 
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (min-width:1024px) {
+    .main{
+        width: 100%;
+        height: 100vh;
+        background-image: url("images/bg-main-desktop.png");
+        background-size: 480px 100%;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .images{
+        height: 100%;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+    
+    .back{
+        width: 447px;
+        height: 245px;
+        align-self: flex-end;
+        background-image: url("images/bg-card-back.png");
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .pin{
+        color: var(--white-color);
+        font-size: 15px;
+        margin: 0;
+        margin-right: 3rem;
+        margin-bottom: 5px;
+        letter-spacing: 2px;
+    }
+    .front{
+        width: 447px;
+        height: 245px;
+        align-self: flex-end;
+        margin: 0;
+        margin-right: 3rem;
+        margin-top: 2rem;
+        padding: 28px;
+        background-image: url("images/bg-card-front.png");
+        color: var(--white-color);
+    }
+    
+    .logo{
+        width: 84px;
+        height: 47px;
+        margin: 0;
+        margin-bottom: 65px;
+        background-image: url("images/card-logo.svg");
+    }
+    .number{
+        font-size: 26px;
+        margin: 0;
+        margin-bottom: 22px;
+        letter-spacing: 5px;
+    }
+    
+    .name-date{
+        font-size: 14px;
+        letter-spacing: 2px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    
+    .form-section{
+        height: 100%;
+        width: 50%;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    
+    
+    .form{
+        width: 380px;
+        height: 360px;
+        /* background-color: aliceblue; */
+        margin: 0;
+        margin-right: 3rem;
+    }
+    
+    .form label{
+        display: inline-block;
+        color: var(--very-dark-violet-color);
+        font-size: 12px;
+        letter-spacing: 2px;
+        margin: 0;
+        margin-right: 42px;
+        margin-top: 1rem;
+        margin-bottom: 7px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .margin{
+        margin-left: 9rem;
+    }
+    
+    .form input{
+        height: 46px;
+        font-family: var(--font-space);
+        /* color: var(--light-grayish-violet-color); */
+        font-size: 1rem;
+        border-radius: 10px;
+        border: thin solid var(--light-grayish-violet-color);
+        margin: 0;
+        padding: 0;
+        padding: 0 12px;
+    }
+    
+    ::placeholder{
+        color: var(--light-grayish-violet-color);
+        margin-left: 1rem;
+    }
+    #Name,
+    #Number,
+    .form input[type="submit"]{
+        width: 100%;
+    }
+    
+    #Month, 
+    #Year{
+        width: 80px;
+    }
+    
+    #Month{
+        margin: 0;
+        margin-right: 6px;
+    }
+    
+    #Cvc{
+        width: 190px;
+        margin-left: 12px;
+    }
+    
+    .form input[type="submit"]{
+        background-color: var(--very-dark-violet-color);
+        color: var(--white-color);
+        margin: 0;
+        margin-top: 1rem;
+        cursor: pointer;
+    }
+    
+    .form input[type="submit"]:hover{
+        background-color: var(--linear-gradient-second-color) ;
+    }
+    
+    .form [required]:valid{
+        border: thin solid var(--green-color);
+    }
+    
+    .form [required]:invalid{
+        border: thin solid var(--red-color);
+    }
+    
+    .err{
+        height: 400px !important;
+    }
+    .form-error{
+        font-size: 12px;
+        text-align: left;
+        color: var(--red-color);
+        transition: all 800ms ease;
+    }
+    .form-error.is-active{
+        display:block;
+        animation: show-message 1s 1 normal 0s ease-out both;
+    }
+    @keyframes show-message{
+        0%{
+            visibility: hidden;
+            opacity: 0;
+        }
+        100%{
+            visibility: visible;
+            opacity: 1; 
+        }
+    }
+    span{
+        display: inline-block;
+    }
+    
+    
+    .complete{
+        width: 380px;
+        height: 360px;
+        margin: 0;
+        margin-right: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .complete h2{
+        letter-spacing: 4px;
+        margin: 0;
+        margin: 2rem 0 1rem 0;
+    }
+    
+    .complete p{
+        margin: 0;
+        color: var(--dark-grayish-violet-color);
+    }
+    
+    
+    .complete button{
+        width: 100%;
+        height: 50px;
+        background-color: var(--very-dark-violet-color);
+        color: var(--white-color);
+        margin: 0;
+        margin-top: 50px;
+        cursor: pointer;
+        font-family: var(--font-space);
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+    
+    .complete button:hover{
+        background-color: var(--linear-gradient-second-color) ;
+    }
+    
+    .none{
+        display: none;
+    }
+    
+    .attribution { 
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        font-size: 11px; 
+        text-align: center; 
+    }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+}
