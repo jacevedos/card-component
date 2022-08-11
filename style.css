@@ -42,7 +42,7 @@ body{
 
 .main{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url("images/bg-main-mobile.png");
     background-size: 100% 35vh;
     background-repeat: no-repeat;
@@ -140,7 +140,7 @@ body{
     font-size: 12px;
     letter-spacing: 2px;
     margin: 0;
-    margin-right: 42px;
+    margin-right: 37px !important;
     margin-top: 1rem;
     margin-bottom: 7px;
     font-weight: 600;
@@ -279,9 +279,9 @@ span{
 }
 
 .attribution { 
-    position: absolute;
+    position:static;
     width: 100%;
-    bottom: 0;
+    /* bottom: 0; */
     font-size: 11px; 
     text-align: center; 
 }
