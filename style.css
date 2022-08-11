@@ -53,15 +53,14 @@ body{
 .images{
     width: 100%;
     display: grid;
-    grid-template-columns: 1rem 15% 1fr 1rem;
-    grid-template-rows: 20% 58% 1fr;
+    grid-template-columns: 1rem 50px;
+    grid-template-rows: 2rem 95px;
     flex-direction: column;
     gap: 0;
-    margin-bottom: 9rem;
 }
 
 .back{
-    grid-column: 3 / 4 ;
+    grid-column: 3 ;
     grid-row: 2 / 4;
     width: 290px;
     height: 159px;
