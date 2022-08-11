@@ -120,6 +120,7 @@ body{
     width:100%;
     display: flex;
     flex-direction: column;
+    margin-top: 2rem;
     /* align-items: center; */
     /* justify-content: center; */
     
@@ -140,7 +141,7 @@ body{
     font-size: 12px;
     letter-spacing: 2px;
     margin: 0;
-    margin-right: 37px !important;
+    margin-right: 37px;
     margin-top: 1rem;
     margin-bottom: 7px;
     font-weight: 600;
@@ -236,6 +237,7 @@ span{
 
 
 .complete{
+    
     width: 380px;
     height: 360px;
     margin: 0;
@@ -362,7 +364,7 @@ span{
     .form-section{
         height: 100%;
         width: 50%;
-    
+        margin-top: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -385,7 +387,7 @@ span{
         font-size: 12px;
         letter-spacing: 2px;
         margin: 0;
-        margin-right: 42px;
+        margin-right:58px;
         margin-top: 1rem;
         margin-bottom: 7px;
         font-weight: 600;
